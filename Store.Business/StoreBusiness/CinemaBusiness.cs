@@ -17,9 +17,23 @@ namespace Store.Business.StoreBusiness
         {
             _cinemaRepository= cinemaRepository;
         }
-        public IEnumerable<Cinemas> GetCinemas()
+        public IEnumerable<Cinemas> GetCinemas(int? id)
         {
-            return _cinemaRepository.GetCinemas();
+            return _cinemaRepository.GetCinemas(id);
+        }
+
+        public IEnumerable<Cinemas> GetCinemaAviables()
+        {
+            return _cinemaRepository.GetCinemaAviables();
+        }
+        public IEnumerable<Cinemas> GetCinemasByHours(DateTime starTime, DateTime endTime)
+        {
+            return _cinemaRepository.GetCinemasByHours(starTime, endTime);
+        }
+
+        public async Task<Cinemas> Insert(Cinemas model)
+        {
+            return await _cinemaRepository.Add(model);
         }
     }
 }

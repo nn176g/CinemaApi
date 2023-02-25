@@ -9,6 +9,9 @@ namespace Store.Repository.Interfaces
 {
     public interface ICinemaRepository
     {
-        IEnumerable<Cinemas> GetCinemas();
+        IEnumerable<Cinemas> GetCinemas(int? id);
+        IEnumerable<Cinemas> GetCinemaAviables();
+        IEnumerable<Cinemas> GetCinemasByHours(DateTime starTime, DateTime endTime);
+        Task<Cinemas> Add(Cinemas cinema);
     }
 }

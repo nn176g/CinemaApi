@@ -9,6 +9,9 @@ namespace Store.Business.Interface
 {
     public interface ICinemaBusiness
     {
-        IEnumerable<Cinemas> GetCinemas();
+        IEnumerable<Cinemas> GetCinemas(int? id);
+        IEnumerable<Cinemas> GetCinemaAviables();
+        IEnumerable<Cinemas> GetCinemasByHours(DateTime starTime, DateTime endTime);
+        Task<Cinemas> Insert(Cinemas model);
     }
 }
