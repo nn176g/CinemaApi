@@ -11,7 +11,7 @@ namespace Store.Repository.Interfaces
     {
         IEnumerable<Cinemas> GetCinemas(int? id);
         IEnumerable<Cinemas> GetCinemaAviables();
-        IEnumerable<Cinemas> GetCinemasByHours(DateTime starTime, DateTime endTime);
+        IEnumerable<Cinemas> GetCinemasByHours(int starTime, int endTime);
         Task<Cinemas> Add(Cinemas cinema);
     }
 }

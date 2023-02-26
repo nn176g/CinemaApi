@@ -5,7 +5,7 @@ using Store.Data.Models;
 namespace Store.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CinemaController : Controller
     {
         private readonly ILogger<CinemaController> _logger;
@@ -49,7 +49,7 @@ namespace Store.API.Controllers
 
         [HttpGet]
         [Route("GetCinemaByHours")]
-        public IActionResult GetCinemasByHours(DateTime starTime, DateTime endTime) {
+        public IActionResult GetCinemasByHours(int starTime, int endTime) {
             try
             {
                 return Ok(_cinemaBusiness.GetCinemasByHours(starTime, endTime));

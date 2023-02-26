@@ -56,11 +56,10 @@ namespace Store.Repository.CinemaRepository
 
         }
 
-        public IEnumerable<Cinemas> GetCinemasByHours(DateTime starTime, DateTime endTime)
+        public IEnumerable<Cinemas> GetCinemasByHours(int starTime, int endTime)
         {
             _logger.LogInformation("Obteniendo todos los cinemas por horas");
-            //var result = _dbContext.Cinemas.Where(x => x.OpenTime.Hour >= 10 && x.CloseTime.Hour <= 13).ToList();
-            var result = _dbContext.Cinemas.Where(x => (starTime.Hour >= x.OpenTime.Hour && endTime.Hour <= x.CloseTime.Hour)).ToList();
+            var result = _dbContext.Cinemas.Where(x => (starTime >= x.OpenTime.Hour && endTime <= x.CloseTime.Hour)).ToList();
             if (result != null )
             {
                 _logger.LogInformation("Obtener Cinemas por hora funciona correctamente");

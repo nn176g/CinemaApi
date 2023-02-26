@@ -26,7 +26,7 @@ namespace Store.Business.StoreBusiness
         {
             return _cinemaRepository.GetCinemaAviables();
         }
-        public IEnumerable<Cinemas> GetCinemasByHours(DateTime starTime, DateTime endTime)
+        public IEnumerable<Cinemas> GetCinemasByHours(int starTime, int endTime)
         {
             return _cinemaRepository.GetCinemasByHours(starTime, endTime);
         }
